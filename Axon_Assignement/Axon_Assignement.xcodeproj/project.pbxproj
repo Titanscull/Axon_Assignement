@@ -18,6 +18,7 @@
 		EE6F2B53261A0EB200445E93 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B52261A0EB200445E93 /* UserListVC.swift */; };
 		EE6F2B56261A125900445E93 /* UserListVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B55261A125900445E93 /* UserListVCPresenter.swift */; };
 		EE6F2B59261A1AC100445E93 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B58261A1AC100445E93 /* UserTableViewCell.swift */; };
+		EEB3F6C9261A5947003716E3 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3F6C8261A5947003716E3 /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		EE6F2B52261A0EB200445E93 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
 		EE6F2B55261A125900445E93 /* UserListVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVCPresenter.swift; sourceTree = "<group>"; };
 		EE6F2B58261A1AC100445E93 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		EEB3F6C8261A5947003716E3 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +93,8 @@
 		EE6F2B47261A0C6B00445E93 /* UsersListController */ = {
 			isa = PBXGroup;
 			children = (
-				EE6F2B58261A1AC100445E93 /* UserTableViewCell.swift */,
-				EE6F2B52261A0EB200445E93 /* UserListVC.swift */,
-				EE6F2B55261A125900445E93 /* UserListVCPresenter.swift */,
+				EEB3F6C7261A58EF003716E3 /* MainVC */,
+				EEB3F6C6261A58D6003716E3 /* DetailVC */,
 			);
 			path = UsersListController;
 			sourceTree = "<group>";
@@ -104,6 +105,24 @@
 				EE6F2B252619EBDE00445E93 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EEB3F6C6261A58D6003716E3 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				EEB3F6C8261A5947003716E3 /* DetailVC.swift */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
+		EEB3F6C7261A58EF003716E3 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				EE6F2B58261A1AC100445E93 /* UserTableViewCell.swift */,
+				EE6F2B55261A125900445E93 /* UserListVCPresenter.swift */,
+				EE6F2B52261A0EB200445E93 /* UserListVC.swift */,
+			);
+			path = MainVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +200,7 @@
 				EE6F2B56261A125900445E93 /* UserListVCPresenter.swift in Sources */,
 				EE6F2B382619EF9900445E93 /* User.swift in Sources */,
 				EE6F2B59261A1AC100445E93 /* UserTableViewCell.swift in Sources */,
+				EEB3F6C9261A5947003716E3 /* DetailVC.swift in Sources */,
 				EE6F2B202619EBDE00445E93 /* AppDelegate.swift in Sources */,
 				EE6F2B222619EBDE00445E93 /* SceneDelegate.swift in Sources */,
 				EE6F2B53261A0EB200445E93 /* UserListVC.swift in Sources */,
