@@ -67,6 +67,9 @@
                     <navigationItem key="navigationItem" title="Randomizzer" id="c6t-qC-orN">
                         <barButtonItem key="backBarButtonItem" title=" " id="LzG-sD-1S6"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="8Gq-pD-176" kind="show" id="6qE-PP-1bw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,13 +82,58 @@
                     <view key="view" contentMode="scaleToFill" id="Pzc-qF-6zp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mK4-nL-ogj">
+                                <rect key="frame" x="87" y="135" width="240" height="181"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mK4-nL-ogj" secondAttribute="height" multiplier="240:181" id="7W5-tu-iXd"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="8r5-rs-je8">
+                                <rect key="frame" x="156.5" y="350" width="101" height="187"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fullname:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imi-3R-eU6">
+                                        <rect key="frame" x="14" y="0.0" width="73.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tV-qR-ipB">
+                                        <rect key="frame" x="20" y="55.5" width="61" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egy-st-yw2">
+                                        <rect key="frame" x="0.0" y="111" width="101" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBh-1H-SdL">
+                                        <rect key="frame" x="24" y="166.5" width="53" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="JIy-P8-X4Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JIy-P8-X4Q" firstAttribute="bottom" secondItem="mK4-nL-ogj" secondAttribute="bottom" constant="546" id="Dda-Ld-J1v"/>
+                            <constraint firstItem="mK4-nL-ogj" firstAttribute="top" secondItem="JIy-P8-X4Q" secondAttribute="top" constant="47" id="IIa-hi-uL1"/>
+                            <constraint firstItem="8r5-rs-je8" firstAttribute="centerX" secondItem="mK4-nL-ogj" secondAttribute="centerX" id="Xe9-1G-P2v"/>
+                            <constraint firstItem="mK4-nL-ogj" firstAttribute="centerX" secondItem="JIy-P8-X4Q" secondAttribute="centerX" id="lCo-Pc-kVM"/>
+                            <constraint firstItem="8r5-rs-je8" firstAttribute="top" secondItem="mK4-nL-ogj" secondAttribute="bottom" constant="34" id="xOG-tn-5Jy"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Xji-cL-hRv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYP-CP-1ka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1494" y="1"/>
+            <point key="canvasLocation" x="1492.753623188406" y="0.6696428571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tsD-M0-C65">
