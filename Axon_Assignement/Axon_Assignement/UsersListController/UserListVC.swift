@@ -10,10 +10,16 @@ import UIKit
 class UserListVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    private lazy var presenter = UserListVCPresenter(view: self)
+    private let manager = UserManager()
+    
+    var users = [User]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegates()
-        
+        presenter.viewDidLoad()
     }
     
     func setupDelegates() {
@@ -28,13 +34,18 @@ extension UserListVC: UITableViewDelegate {
 }
 extension UserListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return presenter.usersCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as! UserTableViewCell
+        presenter.setupCell(cell, indexpath: indexPath)
         return cell
     }
-    
-    
+}
+
+extension UserListVC: UserListVCPresenterView {
+    func refreshTableView() {
+        tableView.reloadData()
+    }
 }

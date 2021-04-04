@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserCell" rowHeight="136" id="AJs-dH-Pfg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserCell" rowHeight="136" id="AJs-dH-Pfg" customClass="UserTableViewCell" customModule="Axon_Assignement" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AJs-dH-Pfg" id="a29-b0-p7f">
@@ -51,6 +51,10 @@
                                             <constraint firstItem="Ujl-cj-gxP" firstAttribute="centerY" secondItem="AJs-dH-Pfg" secondAttribute="centerY" id="K9X-cx-h6e"/>
                                             <constraint firstItem="Ujl-cj-gxP" firstAttribute="leading" secondItem="AJs-dH-Pfg" secondAttribute="leading" constant="12" id="T12-mi-JIh"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="userFullNameLabel" destination="wAr-mT-TZ3" id="a6s-EL-3zh"/>
+                                            <outlet property="userImage" destination="Ujl-cj-gxP" id="g7n-K4-kHD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -74,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="629" y="1"/>
+            <point key="canvasLocation" x="675" y="1"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="AtZ-vh-9xI">

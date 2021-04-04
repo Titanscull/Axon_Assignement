@@ -29,7 +29,7 @@ class UserManager: UserEndPointProtocol {
     
     private lazy var url = "https://randomuser.me/api/?results=\(usersNumber)"
     
-    let session = URLSession.shared
+    private let session = URLSession.shared
     
     func fetchUsers(completion: @escaping ((Result<[User], NetworkError>) -> Void)) {
         
@@ -48,25 +48,28 @@ class UserManager: UserEndPointProtocol {
             
             guard let response = response as? HTTPURLResponse else {
                 completion(.failure(.brokenResponse))
+                print("No response")
                 return
             }
             
             switch response.statusCode {
-            case 200..<201:
+            case 200...201:
                 guard let data = data else {
                     completion(.failure(.NoDataRecieved))
+                    print("No data recieved")
                     return
                 }
                 do {
                     let users = try JSONDecoder().decode(Users.self, from: data)
                     completion(.success(users.results))
+                    print(users.results.first!.fullName)
                 } catch {
                     completion(.failure(.unableToDecode))
                 }
             default:
                 completion(.failure(.unexpectedStatusCode(response.statusCode)))
             }
-        }
+        }.resume()
     }
     
 }

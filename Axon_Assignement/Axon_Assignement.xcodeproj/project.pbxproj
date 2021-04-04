@@ -17,6 +17,7 @@
 		EE6F2B3E2619F16500445E93 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B3D2619F16500445E93 /* UserManager.swift */; };
 		EE6F2B53261A0EB200445E93 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B52261A0EB200445E93 /* UserListVC.swift */; };
 		EE6F2B56261A125900445E93 /* UserListVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B55261A125900445E93 /* UserListVCPresenter.swift */; };
+		EE6F2B59261A1AC100445E93 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B58261A1AC100445E93 /* UserTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EE6F2B3D2619F16500445E93 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		EE6F2B52261A0EB200445E93 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
 		EE6F2B55261A125900445E93 /* UserListVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVCPresenter.swift; sourceTree = "<group>"; };
+		EE6F2B58261A1AC100445E93 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		EE6F2B47261A0C6B00445E93 /* UsersListController */ = {
 			isa = PBXGroup;
 			children = (
+				EE6F2B58261A1AC100445E93 /* UserTableViewCell.swift */,
 				EE6F2B52261A0EB200445E93 /* UserListVC.swift */,
 				EE6F2B55261A125900445E93 /* UserListVCPresenter.swift */,
 			);
@@ -169,6 +172,7 @@
 				EE6F2B3B2619F11000445E93 /* Users.swift in Sources */,
 				EE6F2B56261A125900445E93 /* UserListVCPresenter.swift in Sources */,
 				EE6F2B382619EF9900445E93 /* User.swift in Sources */,
+				EE6F2B59261A1AC100445E93 /* UserTableViewCell.swift in Sources */,
 				EE6F2B202619EBDE00445E93 /* AppDelegate.swift in Sources */,
 				EE6F2B222619EBDE00445E93 /* SceneDelegate.swift in Sources */,
 				EE6F2B53261A0EB200445E93 /* UserListVC.swift in Sources */,

@@ -5,7 +5,7 @@
 //  Created by Ievgen Petrovskiy on 04.04.2021.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - User
 struct User: Codable {
@@ -13,10 +13,16 @@ struct User: Codable {
     let name: Name
     let dob: Dob
     let phone, cell: String
+    let id: ID
     let picture: Picture
     var fullName: String {
         return "\(name.title) \(name.first) \(name.last)"
     }
+}
+// MARK: - ID
+struct ID: Codable {
+    let name: String
+    let value: String?
 }
 
 // MARK: - Name
