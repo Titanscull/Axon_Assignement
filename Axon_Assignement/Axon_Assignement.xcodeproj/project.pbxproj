@@ -16,7 +16,6 @@
 		EE6F2B382619EF9900445E93 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B372619EF9900445E93 /* User.swift */; };
 		EE6F2B3B2619F11000445E93 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B3A2619F11000445E93 /* Users.swift */; };
 		EE6F2B3E2619F16500445E93 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B3D2619F16500445E93 /* UserManager.swift */; };
-		EE6F2B49261A0CB400445E93 /* UsersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B48261A0CB400445E93 /* UsersListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		EE6F2B372619EF9900445E93 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EE6F2B3A2619F11000445E93 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		EE6F2B3D2619F16500445E93 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		EE6F2B48261A0CB400445E93 /* UsersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +88,6 @@
 		EE6F2B47261A0C6B00445E93 /* UsersListController */ = {
 			isa = PBXGroup;
 			children = (
-				EE6F2B48261A0CB400445E93 /* UsersListPresenter.swift */,
 			);
 			path = UsersListController;
 			sourceTree = "<group>";
@@ -167,7 +164,6 @@
 			files = (
 				EE6F2B3E2619F16500445E93 /* UserManager.swift in Sources */,
 				EE6F2B3B2619F11000445E93 /* Users.swift in Sources */,
-				EE6F2B49261A0CB400445E93 /* UsersListPresenter.swift in Sources */,
 				EE6F2B382619EF9900445E93 /* User.swift in Sources */,
 				EE6F2B242619EBDE00445E93 /* ViewController.swift in Sources */,
 				EE6F2B202619EBDE00445E93 /* AppDelegate.swift in Sources */,
