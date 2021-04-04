@@ -22,6 +22,9 @@ enum NetworkError: Error {
 
 class UserManager: UserEndPointProtocol {
     
+//    /// Pegination
+//    randomuser.me/api/?page=3&results=10&seed=abc
+    
     let usersNumber = 20
     
     private lazy var url = "https://randomuser.me/api/?results=\(usersNumber)"
