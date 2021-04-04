@@ -8,10 +8,10 @@
 import Foundation
 
 // MARK: - User
-struct User: Decodable {
+struct User: Codable {
     let gender: String
     let name: Name
-    let dob, registered: Dob
+    let dob: Dob
     let phone, cell: String
     let picture: Picture
     var fullName: String {
@@ -20,17 +20,17 @@ struct User: Decodable {
 }
 
 // MARK: - Name
-struct Name: Decodable {
+struct Name: Codable {
     let title, first, last: String
 }
 
 // MARK: - Dob
-struct Dob: Decodable {
+struct Dob: Codable {
     let date: String
     let age: Int
 }
 
 // MARK: - Picture
-struct Picture: Decodable {
+struct Picture: Codable {
     let large, medium, thumbnail: String
 }
