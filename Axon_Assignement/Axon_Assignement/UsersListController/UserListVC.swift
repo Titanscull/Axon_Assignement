@@ -42,6 +42,10 @@ extension UserListVC: UITableViewDataSource {
         presenter.setupCell(cell, indexpath: indexPath)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "SeeDetails", sender: self)
+    }
 }
 
 extension UserListVC: UserListVCPresenterView {

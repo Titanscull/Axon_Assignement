@@ -76,7 +76,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="aFD-UT-32g" id="IOp-ro-2dL"/>
-                        <segue destination="8Gq-pD-176" kind="show" id="6qE-PP-1bw"/>
+                        <segue destination="8Gq-pD-176" kind="show" identifier="SeeDetails" id="6qE-PP-1bw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

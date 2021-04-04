@@ -32,6 +32,9 @@ class UserListVCPresenter {
         
         let imageUrl = "\(users[indexpath.row].picture.thumbnail)"
         cell.userImage.downloaded(from: imageUrl)
+        
+        cell.userImage.layer.masksToBounds = true
+        cell.userImage.layer.cornerRadius = (cell.userImage.frame.height / 2)
     }
     
     func viewDidLoad() {
