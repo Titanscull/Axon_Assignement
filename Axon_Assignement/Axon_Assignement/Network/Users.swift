@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct UserResponse {
+struct Users: Codable {
     var results = [User]()
 }
