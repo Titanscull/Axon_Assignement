@@ -29,8 +29,8 @@ class UserListVCPresenter {
     
     func setupCell(_ cell: UserTableViewCell, indexpath: IndexPath) {
         cell.userFullNameLabel.text = users[indexpath.row].fullName
+        
         let imageUrl = "\(users[indexpath.row].picture.thumbnail)"
-        print(imageUrl)
         cell.userImage.downloaded(from: imageUrl)
     }
     
