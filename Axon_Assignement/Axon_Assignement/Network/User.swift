@@ -5,7 +5,7 @@
 //  Created by Ievgen Petrovskiy on 04.04.2021.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - User
 struct User: Codable {
