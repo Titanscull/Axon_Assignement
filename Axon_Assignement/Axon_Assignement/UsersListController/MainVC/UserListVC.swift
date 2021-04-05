@@ -14,7 +14,7 @@ class UserListVC: UIViewController {
     private lazy var presenter = UserListVCPresenter(view: self)
     private let manager = UserManager()
     
-    var users: User?
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,25 +46,43 @@ extension UserListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.users = presenter.users[tableView.indexPathForSelectedRow!.row]
-        print(users!)
+        // MARK - temporary array of selected user
+        self.user = presenter.users[tableView.indexPathForSelectedRow!.row]
+        print(user!)
         performSegue(withIdentifier: "SeeDetails", sender: self)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SeeDetails" {
+            
             guard let detailVC = segue.destination as? DetailVC else {return}
             _ = detailVC.view
             
-            detailVC.fullNameLabel.text = users?.fullName
-            detailVC.genderLabel.text = users?.gender
-            detailVC.dobLabel.text = "\(String(describing: users!.dob.date))"
-            detailVC.phoneLabel.text = "\(String(describing: users!.phone))"
-            let imageUrl = "\(users!.picture.large)"
+            detailVC.fullNameLabel.text = user?.fullName
+            detailVC.genderLabel.text = user?.gender.uppercased()
+            detailVC.dobLabel.text = formatDate(date: user!.dob.date)
+            detailVC.phoneLabel.text = "\(String(describing: user!.cell))"
+            let imageUrl = user!.picture.large
             detailVC.userImageView.downloaded(from: imageUrl)
             detailVC.userImageView.layer.masksToBounds = true
             detailVC.userImageView.layer.cornerRadius = detailVC.userImageView.frame.height / 4
         }
     }
+    
+    // MARK - Use to formate DOB
+    func formatDate(date: String) -> String {
+       let dateFormatterGet = DateFormatter()
+       dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+
+       let dateFormatter = DateFormatter()
+       dateFormatter.dateStyle = .medium
+       dateFormatter.timeStyle = .none
+
+       let dateObj: Date? = dateFormatterGet.date(from: date)
+
+       return dateFormatter.string(from: dateObj!)
+    }
+    
 }
 
 extension UserListVC: UserListVCPresenterView {
