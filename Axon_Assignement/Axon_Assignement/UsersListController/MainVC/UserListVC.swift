@@ -34,10 +34,12 @@ class UserListVC: UIViewController {
     
 }
 
+// MARK - extensions to TableView & sending data to DetailVC logic
 extension UserListVC: UITableViewDelegate {
 }
 
 extension UserListVC: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.usersCount
     }
@@ -49,6 +51,7 @@ extension UserListVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         // MARK - temporary array of selected user
         self.user = presenter.users[tableView.indexPathForSelectedRow!.row]
         print(user!)
