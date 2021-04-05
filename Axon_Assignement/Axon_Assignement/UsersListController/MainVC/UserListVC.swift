@@ -67,7 +67,8 @@ extension UserListVC: UITableViewDataSource {
             detailVC.fullNameLabel.text = user?.fullName
             detailVC.genderLabel.text = user?.gender.uppercased()
             detailVC.dobLabel.text = formatDate(date: user!.dob.date)
-            detailVC.phoneLabel.text = "\(String(describing: user!.cell))"
+            detailVC.phoneLabel.text = "tel: \(user?.phone ?? "No city phone")"
+            detailVC.mobilePhoneLabel.text = "mob: \(user?.cell ?? "No cell phone")"
             let imageUrl = user!.picture.large
             detailVC.userImageView.downloaded(from: imageUrl)
             detailVC.userImageView.layer.masksToBounds = true
