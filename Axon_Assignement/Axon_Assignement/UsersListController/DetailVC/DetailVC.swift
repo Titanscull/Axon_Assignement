@@ -8,6 +8,7 @@
 import UIKit
 
 class DetailVC: UIViewController {
+    
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!

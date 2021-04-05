@@ -83,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="672.46376811594212" y="0.6696428571428571"/>
         </scene>
-        <!--DetailVC-->
+        <!--Portfolio-->
         <scene sceneID="AtZ-vh-9xI">
             <objects>
                 <viewController id="8Gq-pD-176" customClass="DetailVC" customModule="Axon_Assignement" customModuleProvider="target" sceneMemberID="viewController">
@@ -169,7 +169,7 @@
                             <constraint firstAttribute="bottom" secondItem="XbA-MT-8xC" secondAttribute="bottom" id="rpb-ET-JE9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Xji-cL-hRv"/>
+                    <navigationItem key="navigationItem" title="Portfolio" id="Xji-cL-hRv"/>
                     <connections>
                         <outlet property="dobLabel" destination="Egy-st-yw2" id="ibF-bK-v6G"/>
                         <outlet property="fullNameLabel" destination="Imi-3R-eU6" id="1eh-L3-vcd"/>

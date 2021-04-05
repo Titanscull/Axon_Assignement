@@ -28,6 +28,7 @@ class UserListVCPresenter {
     let manager = UserManager()
     
     func setupCell(_ cell: UserTableViewCell, indexpath: IndexPath) {
+        
         DispatchQueue.main.async { [self] in
             cell.userFullNameLabel.text = users[indexpath.row].fullName
             
@@ -36,6 +37,7 @@ class UserListVCPresenter {
             
             cell.userImage.layer.masksToBounds = true
             cell.userImage.layer.cornerRadius = (cell.userImage.frame.height / 2)
+            
         }
     }
     
