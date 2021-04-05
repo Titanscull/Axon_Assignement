@@ -28,13 +28,17 @@ class UserListVCPresenter {
     let manager = UserManager()
     
     func setupCell(_ cell: UserTableViewCell, indexpath: IndexPath) {
-        cell.userFullNameLabel.text = users[indexpath.row].fullName
         
-        let imageUrl = "\(users[indexpath.row].picture.thumbnail)"
-        cell.userImage.downloaded(from: imageUrl)
-        
-        cell.userImage.layer.masksToBounds = true
-        cell.userImage.layer.cornerRadius = (cell.userImage.frame.height / 2)
+        DispatchQueue.main.async { [self] in
+            cell.userFullNameLabel.text = users[indexpath.row].fullName
+            
+            let imageUrl = "\(users[indexpath.row].picture.thumbnail)"
+            cell.userImage.downloaded(from: imageUrl)
+            
+            cell.userImage.layer.masksToBounds = true
+            cell.userImage.layer.cornerRadius = (cell.userImage.frame.height / 2)
+            
+        }
     }
     
     func viewDidLoad() {

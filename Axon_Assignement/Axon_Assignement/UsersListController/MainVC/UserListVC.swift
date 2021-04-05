@@ -14,6 +14,7 @@ class UserListVC: UIViewController {
     private lazy var presenter = UserListVCPresenter(view: self)
     private let manager = UserManager()
     
+    // MARK - Temporary array to use with DetailVC
     var user: User?
     
     override func viewDidLoad() {
@@ -40,34 +41,43 @@ extension UserListVC: UITableViewDelegate {
 
 extension UserListVC: UITableViewDataSource {
     
+    // Number of sections to display
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.usersCount
     }
     
+    // Set up Cell with data
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as! UserTableViewCell
         presenter.setupCell(cell, indexpath: indexPath)
+        
         return cell
     }
     
+    // If user taps on Cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // MARK - temporary array of selected user
         self.user = presenter.users[tableView.indexPathForSelectedRow!.row]
         print(user!)
         performSegue(withIdentifier: "SeeDetails", sender: self)
+        
     }
     
+    // MARK - Set up DetailVC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SeeDetails" {
             
             guard let detailVC = segue.destination as? DetailVC else {return}
+            
             _ = detailVC.view
             
-            detailVC.fullNameLabel.text = user?.fullName
-            detailVC.genderLabel.text = user?.gender.uppercased()
-            detailVC.dobLabel.text = formatDate(date: user!.dob.date)
-            detailVC.phoneLabel.text = "\(String(describing: user!.cell))"
+            detailVC.fullNameLabel.text = "\(user?.fullName ?? "Unknown")"
+            detailVC.genderLabel.text = "Gender: \(user?.gender ?? "Unknown")"
+            detailVC.dobLabel.text = "Date of Birth : \(formatDate(date: user?.dob.date ?? "Unknow date of birth"))"
+            detailVC.phoneLabel.text = "tel/fax: \(user?.phone ?? "No city phone")"
+            detailVC.mobilePhoneLabel.text = "mob: \(user?.cell ?? "No cell phone")"
             let imageUrl = user!.picture.large
             detailVC.userImageView.downloaded(from: imageUrl)
             detailVC.userImageView.layer.masksToBounds = true
@@ -78,12 +88,13 @@ extension UserListVC: UITableViewDataSource {
     
     // MARK - Use to formate DOB
     func formatDate(date: String) -> String {
+        
        let dateFormatterGet = DateFormatter()
        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
 
        let dateFormatter = DateFormatter()
+        
        dateFormatter.dateStyle = .medium
-       dateFormatter.timeStyle = .none
 
        let dateObj: Date? = dateFormatterGet.date(from: date)
 
