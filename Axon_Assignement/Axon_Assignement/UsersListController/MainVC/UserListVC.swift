@@ -25,7 +25,7 @@ class UserListVC: UIViewController {
         
     }
     
-    // MARK - Setting up table view
+    // MARK - Setting up table view delegates
     func setupDelegates() {
         
         tableView.delegate = self
@@ -35,10 +35,11 @@ class UserListVC: UIViewController {
     
 }
 
-// MARK - extensions to TableView & sending data to DetailVC logic
+// MARK - TableView Delegates
 extension UserListVC: UITableViewDelegate {
 }
 
+// MARK - Datasource for TableView & sending data to DetailVC logic
 extension UserListVC: UITableViewDataSource {
     
     // Number of sections to display
@@ -86,19 +87,19 @@ extension UserListVC: UITableViewDataSource {
         }
     }
     
-    // MARK - Use to formate DOB
+    // MARK - Used to formate DOB
     func formatDate(date: String) -> String {
         
-       let dateFormatterGet = DateFormatter()
-       dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-
-       let dateFormatter = DateFormatter()
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         
-       dateFormatter.dateStyle = .medium
-
-       let dateObj: Date? = dateFormatterGet.date(from: date)
-
-       return dateFormatter.string(from: dateObj!)
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = .medium
+        
+        let dateObj: Date? = dateFormatterGet.date(from: date)
+        
+        return dateFormatter.string(from: dateObj!)
     }
     
 }

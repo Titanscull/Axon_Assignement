@@ -12,18 +12,17 @@ protocol UserEndPointProtocol: class {
 }
 
 enum NetworkError: Error {
+    
     case urlIsNotValid
     case sessionIsNotValid
     case brokenResponse
     case NoDataRecieved
     case unableToDecode
     case unexpectedStatusCode(Int)
+    
 }
 
 class UserManager: UserEndPointProtocol {
-    
-//    /// Pegination
-//    randomuser.me/api/?page=3&results=10&seed=abc
     
     let usersNumber = 20
     
