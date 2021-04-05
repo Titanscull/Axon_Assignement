@@ -18,15 +18,18 @@ class UserListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupDelegates()
         presenter.viewDidLoad()
-        //        print(users!)
+        
     }
     
     // MARK - Setting up table view
     func setupDelegates() {
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
 }
@@ -65,7 +68,8 @@ extension UserListVC: UITableViewDataSource {
             let imageUrl = user!.picture.large
             detailVC.userImageView.downloaded(from: imageUrl)
             detailVC.userImageView.layer.masksToBounds = true
-            detailVC.userImageView.layer.cornerRadius = detailVC.userImageView.frame.height / 4
+            detailVC.userImageView.layer.cornerRadius = detailVC.userImageView.frame.height / 2
+            
         }
     }
     
