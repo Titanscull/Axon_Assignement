@@ -92,9 +92,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mK4-nL-ogj">
-                                <rect key="frame" x="87" y="135" width="240" height="181"/>
+                                <rect key="frame" x="116.5" y="135" width="181" height="181"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="mK4-nL-ogj" secondAttribute="height" multiplier="240:181" id="7W5-tu-iXd"/>
+                                    <constraint firstAttribute="width" secondItem="mK4-nL-ogj" secondAttribute="height" multiplier="1:1" id="7W5-tu-iXd"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="8r5-rs-je8">
@@ -130,9 +130,9 @@
                         <viewLayoutGuide key="safeArea" id="JIy-P8-X4Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JIy-P8-X4Q" firstAttribute="bottom" secondItem="mK4-nL-ogj" secondAttribute="bottom" constant="546" id="Dda-Ld-J1v"/>
                             <constraint firstItem="mK4-nL-ogj" firstAttribute="top" secondItem="JIy-P8-X4Q" secondAttribute="top" constant="47" id="IIa-hi-uL1"/>
                             <constraint firstItem="8r5-rs-je8" firstAttribute="centerX" secondItem="mK4-nL-ogj" secondAttribute="centerX" id="Xe9-1G-P2v"/>
+                            <constraint firstItem="8r5-rs-je8" firstAttribute="top" secondItem="JIy-P8-X4Q" secondAttribute="top" constant="262" id="hgl-yT-blc"/>
                             <constraint firstItem="mK4-nL-ogj" firstAttribute="centerX" secondItem="JIy-P8-X4Q" secondAttribute="centerX" id="lCo-Pc-kVM"/>
                             <constraint firstItem="8r5-rs-je8" firstAttribute="top" secondItem="mK4-nL-ogj" secondAttribute="bottom" constant="34" id="xOG-tn-5Jy"/>
                         </constraints>
