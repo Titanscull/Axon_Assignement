@@ -14,4 +14,8 @@ class DetailVC: UIViewController {
     @IBOutlet weak var dobLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
 }
