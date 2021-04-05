@@ -76,17 +76,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="aFD-UT-32g" id="IOp-ro-2dL"/>
-                        <segue destination="8Gq-pD-176" kind="show" id="6qE-PP-1bw"/>
+                        <segue destination="8Gq-pD-176" kind="show" identifier="SeeDetails" id="6qE-PP-1bw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="675" y="1"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailVC-->
         <scene sceneID="AtZ-vh-9xI">
             <objects>
-                <viewController id="8Gq-pD-176" sceneMemberID="viewController">
+                <viewController id="8Gq-pD-176" customClass="DetailVC" customModule="Axon_Assignement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pzc-qF-6zp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,6 +138,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xji-cL-hRv"/>
+                    <connections>
+                        <outlet property="dobLabel" destination="Egy-st-yw2" id="ibF-bK-v6G"/>
+                        <outlet property="fullNameLabel" destination="Imi-3R-eU6" id="1eh-L3-vcd"/>
+                        <outlet property="genderLabel" destination="9tV-qR-ipB" id="gwZ-Tg-fIK"/>
+                        <outlet property="phoneLabel" destination="WBh-1H-SdL" id="H05-ck-eXt"/>
+                        <outlet property="userImageView" destination="mK4-nL-ogj" id="BLr-LS-4zg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYP-CP-1ka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

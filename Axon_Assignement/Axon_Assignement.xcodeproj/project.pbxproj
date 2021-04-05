@@ -18,6 +18,8 @@
 		EE6F2B53261A0EB200445E93 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B52261A0EB200445E93 /* UserListVC.swift */; };
 		EE6F2B56261A125900445E93 /* UserListVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B55261A125900445E93 /* UserListVCPresenter.swift */; };
 		EE6F2B59261A1AC100445E93 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6F2B58261A1AC100445E93 /* UserTableViewCell.swift */; };
+		EEB3F6C9261A5947003716E3 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3F6C8261A5947003716E3 /* DetailVC.swift */; };
+		EEDD5DFF261B1A7800BDDC8F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD5DFE261B1A7800BDDC8F /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		EE6F2B52261A0EB200445E93 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
 		EE6F2B55261A125900445E93 /* UserListVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVCPresenter.swift; sourceTree = "<group>"; };
 		EE6F2B58261A1AC100445E93 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		EEB3F6C8261A5947003716E3 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		EEDD5DFE261B1A7800BDDC8F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		EE6F2B1E2619EBDE00445E93 /* Axon_Assignement */ = {
 			isa = PBXGroup;
 			children = (
+				EEDD5E02261B1AB900BDDC8F /* Extensions */,
 				EE6F2B362619EF7500445E93 /* Network */,
 				EEB3F6C4261A4F6E003716E3 /* View */,
 				EE6F2B47261A0C6B00445E93 /* UsersListController */,
@@ -91,9 +96,8 @@
 		EE6F2B47261A0C6B00445E93 /* UsersListController */ = {
 			isa = PBXGroup;
 			children = (
-				EE6F2B58261A1AC100445E93 /* UserTableViewCell.swift */,
-				EE6F2B52261A0EB200445E93 /* UserListVC.swift */,
-				EE6F2B55261A125900445E93 /* UserListVCPresenter.swift */,
+				EEB3F6C7261A58EF003716E3 /* MainVC */,
+				EEB3F6C6261A58D6003716E3 /* DetailVC */,
 			);
 			path = UsersListController;
 			sourceTree = "<group>";
@@ -104,6 +108,32 @@
 				EE6F2B252619EBDE00445E93 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EEB3F6C6261A58D6003716E3 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				EEB3F6C8261A5947003716E3 /* DetailVC.swift */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
+		EEB3F6C7261A58EF003716E3 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				EE6F2B58261A1AC100445E93 /* UserTableViewCell.swift */,
+				EE6F2B55261A125900445E93 /* UserListVCPresenter.swift */,
+				EE6F2B52261A0EB200445E93 /* UserListVC.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		EEDD5E02261B1AB900BDDC8F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EEDD5DFE261B1A7800BDDC8F /* UIImageViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,11 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEDD5DFF261B1A7800BDDC8F /* UIImageViewExtension.swift in Sources */,
 				EE6F2B3E2619F16500445E93 /* UserManager.swift in Sources */,
 				EE6F2B3B2619F11000445E93 /* Users.swift in Sources */,
 				EE6F2B56261A125900445E93 /* UserListVCPresenter.swift in Sources */,
 				EE6F2B382619EF9900445E93 /* User.swift in Sources */,
 				EE6F2B59261A1AC100445E93 /* UserTableViewCell.swift in Sources */,
+				EEB3F6C9261A5947003716E3 /* DetailVC.swift in Sources */,
 				EE6F2B202619EBDE00445E93 /* AppDelegate.swift in Sources */,
 				EE6F2B222619EBDE00445E93 /* SceneDelegate.swift in Sources */,
 				EE6F2B53261A0EB200445E93 /* UserListVC.swift in Sources */,
