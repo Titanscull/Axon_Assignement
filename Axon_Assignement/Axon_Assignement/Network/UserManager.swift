@@ -8,7 +8,7 @@
 import Foundation
 
 protocol UserEndPointProtocol: class {
-    func fetchUsers(completion: @escaping ((Result<[User], NetworkError>) -> Void))
+    func fetchUsers(pegination: Bool, completion: @escaping ((Result<[User], NetworkError>) -> Void))
 }
 
 enum NetworkError: Error {
@@ -31,7 +31,7 @@ class UserManager: UserEndPointProtocol {
     
     private let session = URLSession.shared
     
-    func fetchUsers(completion: @escaping ((Result<[User], NetworkError>) -> Void)) {
+    func fetchUsers(pegination: Bool = false, completion: @escaping ((Result<[User], NetworkError>) -> Void)) {
         
         guard let url = URL(string: url) else {
             completion(.failure(.urlIsNotValid))
