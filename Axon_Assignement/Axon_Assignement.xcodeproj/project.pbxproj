@@ -73,7 +73,7 @@
 				EEDD5E02261B1AB900BDDC8F /* Extensions */,
 				EE6F2B362619EF7500445E93 /* Network */,
 				EEB3F6C4261A4F6E003716E3 /* View */,
-				EE6F2B47261A0C6B00445E93 /* UsersListController */,
+				EE6F2B47261A0C6B00445E93 /* Controllers */,
 				EE6F2B1F2619EBDE00445E93 /* AppDelegate.swift */,
 				EE6F2B212619EBDE00445E93 /* SceneDelegate.swift */,
 				EE6F2B282619EBDF00445E93 /* Assets.xcassets */,
@@ -93,13 +93,13 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		EE6F2B47261A0C6B00445E93 /* UsersListController */ = {
+		EE6F2B47261A0C6B00445E93 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				EEB3F6C7261A58EF003716E3 /* MainVC */,
 				EEB3F6C6261A58D6003716E3 /* DetailVC */,
 			);
-			path = UsersListController;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		EEB3F6C4261A4F6E003716E3 /* View */ = {
