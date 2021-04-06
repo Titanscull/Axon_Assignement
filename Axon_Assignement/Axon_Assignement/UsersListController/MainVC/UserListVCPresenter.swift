@@ -55,7 +55,7 @@ class UserListVCPresenter {
         }
     }
     
-    func dataEnded() {
+    func getMoreContent() {
         manager.fetchMoreUsers(pagination: true) { [weak self] result in
             switch result {
             case .failure(let error):

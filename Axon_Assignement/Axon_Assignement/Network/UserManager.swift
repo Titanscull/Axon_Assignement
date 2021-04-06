@@ -81,7 +81,7 @@ class UserManager: UserEndPointProtocol {
         if pagination {
             isPaginating = true
         }
-
+        
         self.currentPage += 1
         print("Current page now is \(currentPage)")
         
@@ -116,6 +116,8 @@ class UserManager: UserEndPointProtocol {
                 do {
                     let users = try JSONDecoder().decode(Users.self, from: data)
                     completion(.success(users.results))
+                    
+                    // Stop peginating
                     if pagination {
                         self.isPaginating = false
                     }

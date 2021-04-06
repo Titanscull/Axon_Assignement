@@ -14,7 +14,7 @@ class UserListVC: UIViewController {
     private lazy var presenter = UserListVCPresenter(view: self)
     private let manager = UserManager()
     
-    // MARK - Temporary array to use with DetailVC
+    // MARK - Temporary array to use for DetailVC
     var user: User?
     
     override func viewDidLoad() {
@@ -39,22 +39,24 @@ class UserListVC: UIViewController {
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         
-        let dateFormatter = DateFormatter()
+        let dateFormatterSet = DateFormatter()
         
-        dateFormatter.dateStyle = .medium
+        dateFormatterSet.dateStyle = .medium
         
         let dateObj: Date? = dateFormatterGet.date(from: date)
         
-        return dateFormatter.string(from: dateObj!)
+        return dateFormatterSet.string(from: dateObj!)
         
     }
     
-    
 }
 
-// MARK - TableView Delegates
+// MARK - TableView Delegate
 extension UserListVC: UITableViewDelegate {
+    
+    // Load more data when user reaches bottom
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
         let position = scrollView.contentOffset.y
         if position > (tableView.contentSize.height - scrollView.frame.size.height) {
             
@@ -63,7 +65,7 @@ extension UserListVC: UITableViewDelegate {
             }
             
             DispatchQueue.main.async {
-                self.presenter.dataEnded()
+                self.presenter.getMoreContent()
             }
         }
     }
@@ -91,13 +93,14 @@ extension UserListVC: UITableViewDataSource {
         
         // MARK - temporary array of selected user
         self.user = presenter.users[tableView.indexPathForSelectedRow!.row]
-        print(user!)
+        
         performSegue(withIdentifier: "SeeDetails", sender: self)
         
     }
     
     // MARK - Set up DetailVC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "SeeDetails" {
             
             guard let detailVC = segue.destination as? DetailVC else {return}
