@@ -24,9 +24,10 @@ enum NetworkError: Error {
 
 class UserManager: UserEndPointProtocol {
     
-    let usersNumber = 20
+    private var usersNumber = 10
+    private var page = 0
     
-    private lazy var url = "https://randomuser.me/api/?results=\(usersNumber)"
+    private lazy var url = "https://randomuser.me/api/?page=\(page)&results=\(usersNumber)&seed=abc"
     
     private let session = URLSession.shared
     

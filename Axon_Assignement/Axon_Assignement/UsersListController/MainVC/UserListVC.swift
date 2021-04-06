@@ -33,6 +33,22 @@ class UserListVC: UIViewController {
         
     }
     
+    // MARK - Used to formate DOB
+    func formatDate(date: String) -> String {
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = .medium
+        
+        let dateObj: Date? = dateFormatterGet.date(from: date)
+        
+        return dateFormatter.string(from: dateObj!)
+    }
+    
+    
 }
 
 // MARK - TableView Delegates
@@ -86,22 +102,6 @@ extension UserListVC: UITableViewDataSource {
             
         }
     }
-    
-    // MARK - Used to formate DOB
-    func formatDate(date: String) -> String {
-        
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        
-        let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateStyle = .medium
-        
-        let dateObj: Date? = dateFormatterGet.date(from: date)
-        
-        return dateFormatter.string(from: dateObj!)
-    }
-    
 }
 
 extension UserListVC: UserListVCPresenterView {
