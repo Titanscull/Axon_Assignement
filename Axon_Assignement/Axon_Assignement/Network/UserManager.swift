@@ -81,7 +81,7 @@ class UserManager: UserEndPointProtocol {
         if pagination {
             isPaginating = true
         }
-
+        
         self.currentPage += 1
         print("Current page now is \(currentPage)")
         

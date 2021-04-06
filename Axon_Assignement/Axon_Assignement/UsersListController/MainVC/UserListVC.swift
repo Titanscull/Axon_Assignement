@@ -49,7 +49,6 @@ class UserListVC: UIViewController {
         
     }
     
-    
 }
 
 // MARK - TableView Delegates
