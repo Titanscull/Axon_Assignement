@@ -9,6 +9,7 @@ import Foundation
 
 protocol UserEndPointProtocol: class {
     func fetchUsers(completion: @escaping ((Result<[User], NetworkError>) -> Void))
+    func fetchMoreUsers(pagination: Bool, completion: @escaping ((Result<[User], NetworkError>) -> Void))
 }
 
 enum NetworkError: Error {
@@ -24,9 +25,13 @@ enum NetworkError: Error {
 
 class UserManager: UserEndPointProtocol {
     
-    let usersNumber = 20
+    public var isPaginating = false
     
-    private lazy var url = "https://randomuser.me/api/?results=\(usersNumber)"
+    private var usersNumber : Int = 20
+    
+    private var currentPage: Int = 0
+    
+    private lazy var url = "https://randomuser.me/api/?page=\(currentPage)&results=\(usersNumber)&seed=abc"
     
     private let session = URLSession.shared
     
@@ -61,7 +66,59 @@ class UserManager: UserEndPointProtocol {
                 do {
                     let users = try JSONDecoder().decode(Users.self, from: data)
                     completion(.success(users.results))
-                    print(users.results.first!.fullName)
+                    self.currentPage = users.info.page
+                } catch {
+                    completion(.failure(.unableToDecode))
+                }
+            default:
+                completion(.failure(.unexpectedStatusCode(response.statusCode)))
+            }
+        }.resume()
+    }
+    
+    func fetchMoreUsers(pagination: Bool = false, completion: @escaping ((Result<[User], NetworkError>) -> Void)) {
+        
+        if pagination {
+            isPaginating = true
+        }
+
+        self.currentPage += 1
+        print("Current page now is \(currentPage)")
+        
+        guard let url = URL(string: "https://randomuser.me/api/?page=\(currentPage)&results=\(usersNumber)&seed=abc") else {
+            completion(.failure(.urlIsNotValid))
+            return
+        }
+        
+        print("Url for current page is \(url)")
+        
+        session.dataTask(with: url) { data, response, error in
+            
+            if error != nil {
+                completion(.failure(.sessionIsNotValid))
+                print(error!.localizedDescription)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                completion(.failure(.brokenResponse))
+                print("No response")
+                return
+            }
+            
+            switch response.statusCode {
+            case 200...201:
+                guard let data = data else {
+                    completion(.failure(.NoDataRecieved))
+                    print("No data recieved")
+                    return
+                }
+                do {
+                    let users = try JSONDecoder().decode(Users.self, from: data)
+                    completion(.success(users.results))
+                    if pagination {
+                        self.isPaginating = false
+                    }
                 } catch {
                     completion(.failure(.unableToDecode))
                 }

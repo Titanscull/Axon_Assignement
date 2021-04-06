@@ -9,4 +9,5 @@ import Foundation
 
 struct Users: Codable {
     var results = [User]()
+    var info : Info
 }
