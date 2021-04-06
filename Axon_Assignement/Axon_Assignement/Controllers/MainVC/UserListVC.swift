@@ -90,7 +90,7 @@ extension UserListVC: UITableViewDataSource {
         
         // MARK - temporary array of selected user
         self.user = presenter.users[tableView.indexPathForSelectedRow!.row]
-        print(user!)
+        print("Details of user \(String(describing: user!.fullName)) will be shown")
         performSegue(withIdentifier: "SeeDetails", sender: self)
         
     }
@@ -103,16 +103,19 @@ extension UserListVC: UITableViewDataSource {
             
             _ = detailVC.view
             
-            detailVC.fullNameLabel.text = "\(user?.fullName ?? "Unknown")"
-            detailVC.genderLabel.text = "Gender: \(user?.gender ?? "Unknown")"
-            detailVC.dobLabel.text = "Date of Birth : \(formatDate(date: user?.dob.date ?? "Unknow date of birth"))"
-            detailVC.phoneLabel.text = "tel/fax: \(user?.phone ?? "No city phone")"
-            detailVC.mobilePhoneLabel.text = "mob: \(user?.cell ?? "No cell phone")"
-            let imageUrl = user!.picture.large
-            detailVC.userImageView.downloaded(from: imageUrl)
-            detailVC.userImageView.layer.masksToBounds = true
-            detailVC.userImageView.layer.cornerRadius = detailVC.userImageView.frame.height / 2
-            
+            DispatchQueue.main.async { [self] in
+                
+                detailVC.fullNameLabel.text = "\(user?.fullName ?? "Unknown")"
+                detailVC.genderLabel.text = "Gender: \(user?.gender ?? "Unknown")"
+                detailVC.dobLabel.text = "Date of Birth : \(formatDate(date: user?.dob.date ?? "Unknow date of birth"))"
+                detailVC.phoneLabel.text = "tel/fax: \(user?.phone ?? "No city phone")"
+                detailVC.mobilePhoneLabel.text = "mob: \(user?.cell ?? "No cell phone")"
+                let imageUrl = user!.picture.large
+                detailVC.userImageView.downloaded(from: imageUrl)
+                detailVC.userImageView.layer.masksToBounds = true
+                detailVC.userImageView.layer.cornerRadius = detailVC.userImageView.frame.height / 2
+                
+            }
         }
     }
 }

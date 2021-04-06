@@ -64,7 +64,7 @@ class UserListVCPresenter {
                 self?.users.append(contentsOf: moreData)
                 DispatchQueue.main.async { [weak self] in
                     self?.view?.refreshTableView()
-                    print("Data loaded")
+                    print("Data is loaded")
                 }
             }
         }

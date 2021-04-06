@@ -27,9 +27,9 @@ class UserManager: UserEndPointProtocol {
     
     public var isPaginating = false
     
-    private var usersNumber : Int = 20
+    private var usersNumber = 20
     
-    private var currentPage: Int = 0
+    private var currentPage = 0
     
     private lazy var url = "https://randomuser.me/api/?page=\(currentPage)&results=\(usersNumber)&seed=abc"
     
