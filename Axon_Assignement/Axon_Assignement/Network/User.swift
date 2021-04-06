@@ -7,6 +7,11 @@
 
 import UIKit
 
+// MARK: - Info
+struct Info: Codable {
+    let results, page: Int
+}
+
 // MARK: - User
 struct User: Codable {
     let gender: String

@@ -46,6 +46,7 @@ class UserListVC: UIViewController {
         let dateObj: Date? = dateFormatterGet.date(from: date)
         
         return dateFormatter.string(from: dateObj!)
+        
     }
     
     
@@ -53,6 +54,19 @@ class UserListVC: UIViewController {
 
 // MARK - TableView Delegates
 extension UserListVC: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        if position > (tableView.contentSize.height - scrollView.frame.size.height) {
+            
+            guard !presenter.manager.isPaginating else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.presenter.dataEnded()
+            }
+        }
+    }
 }
 
 // MARK - Datasource for TableView & sending data to DetailVC logic

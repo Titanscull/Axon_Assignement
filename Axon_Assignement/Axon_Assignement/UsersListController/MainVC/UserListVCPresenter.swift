@@ -48,9 +48,23 @@ class UserListVCPresenter {
                 print(error.localizedDescription)
             case .success(let users):
                 self?.users = users
-                print(users.first!.picture)
                 DispatchQueue.main.async {
                     self?.view?.refreshTableView()
+                }
+            }
+        }
+    }
+    
+    func dataEnded() {
+        manager.fetchMoreUsers(pagination: true) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let moreData):
+                self?.users.append(contentsOf: moreData)
+                DispatchQueue.main.async { [weak self] in
+                    self?.view?.refreshTableView()
+                    print("Data loaded")
                 }
             }
         }
